@@ -1,0 +1,27 @@
+@import '../../mixin.scss';
+
+.home {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-image: url('../../images/homepage.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+
+    &__wrapper {
+        width: 80%;
+        margin: 0 auto;
+
+        h1 {
+            width: 70%;
+            font-size: 5vw;
+            color: $white;
+            @include phone {
+                font-size: 3rem;
+                width: 100%;
+            }
+        }
+    }
+}

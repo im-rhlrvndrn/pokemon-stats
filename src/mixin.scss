@@ -1,0 +1,22 @@
+$pokemon_red: #a62d28;
+$pokemon_yellow: #f0bd01;
+$offwhite: #f3f2ef;
+$white: white;
+
+@mixin phone {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin mini-tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}

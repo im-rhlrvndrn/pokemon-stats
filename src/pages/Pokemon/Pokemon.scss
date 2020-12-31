@@ -1,0 +1,233 @@
+@import '../../mixin.scss';
+
+.pokemon {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include phone {
+        padding-top: 2rem;
+        align-items: flex-start;
+    }
+
+    img {
+        height: 500px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+        @include phone {
+            width: 90%;
+            height: 300px;
+        }
+    }
+
+    &__card {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 500px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        overflow-y: auto;
+        @include phone {
+            flex-direction: column;
+            border-radius: 10px;
+            min-height: 200px;
+            height: calc(100% - 40%);
+            min-width: 80%;
+            width: 80%;
+            backdrop-filter: blur(4px);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        * {
+            color: $offwhite;
+            @include phone {
+                color: black;
+            }
+        }
+
+        &__left {
+            flex: 0.3;
+        }
+
+        &__right {
+            flex: 0.3;
+
+            h3 {
+                margin: 1rem 0;
+                text-transform: uppercase;
+                font-size: 2.5rem;
+                @include phone {
+                    text-align: center;
+                    font-size: 1.5rem;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 800;
+                }
+            }
+
+            .pokemon__physic {
+                margin-bottom: 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                &__height,
+                &__weight,
+                &__type {
+                    margin-right: 0.5rem;
+
+                    .title {
+                        font-size: 0.8rem;
+                    }
+
+                    .subtitle {
+                        font-size: 1.5rem;
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pokemon__stats {
+    width: 100%;
+    height: 220px;
+    overflow-y: auto;
+    padding: 0 1rem 0 0;
+    @include phone {
+        padding: 0;
+    }
+
+    /* width */
+    &::-webkit-scrollbar {
+        width: 7px;
+        @include phone {
+            width: 0;
+        }
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    h4 {
+        z-index: 100;
+        background-color: #222;
+        position: sticky;
+        top: 0;
+        margin-bottom: 1rem;
+        @include phone {
+            font-size: 1rem;
+            position: static;
+            background: transparent;
+        }
+    }
+
+    &__stat {
+        .info {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            p {
+                text-transform: uppercase;
+                // font-size: 0.8rem;
+            }
+
+            h3 {
+                margin: 0;
+                font-size: 1.5rem;
+            }
+        }
+
+        .stat__bar {
+            margin: 0.5rem 0 1rem 0;
+            width: 100%;
+            height: 2px;
+            background-color: $offwhite;
+            position: relative;
+
+            &__progress {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                height: 5px;
+                width: 0;
+                background-color: $pokemon_red;
+            }
+        }
+    }
+}
+
+.pokemon__moves {
+    height: 100%;
+    overflow-y: auto;
+    padding: 0 1rem 0 0;
+    @include phone {
+        margin-top: 1rem;
+        padding: 0;
+    }
+
+    /* width */
+    &::-webkit-scrollbar {
+        width: 7px;
+        @include phone {
+            width: 0;
+        }
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    h3 {
+        background-color: #222;
+        position: sticky;
+        top: 0;
+        margin-bottom: 1rem;
+        @include phone {
+            background-color: transparent;
+            position: static;
+        }
+    }
+
+    div {
+        padding: 2rem 1rem;
+        background-color: rgba(255, 255, 255, 0.4);
+        margin-bottom: 1rem;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+}
