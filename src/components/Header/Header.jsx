@@ -16,10 +16,10 @@ const Header = () => {
 
     const fetchPokemon = async () => {
         try {
-            let response = await pokemonInstance.getPokemonByName(searchInput);
+            let response = await pokemonInstance.getPokemonByName(searchInput.toLowerCase());
             console.log(response);
             dispatch({ type: 'SET_POKEMON', pokemon: response });
-            history.push(`/pokemon/${searchInput}`);
+            history.push(`/pokemon/${searchInput.toLowerCase()}`);
         } catch (error) {
             console.log(error);
             alert('Pokemon Not Found!');
