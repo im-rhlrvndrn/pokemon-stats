@@ -9,6 +9,9 @@
     background-position: center;
     display: flex;
     align-items: center;
+    @include tablet {
+        background-position: left center;
+    }
 
     &__wrapper {
         width: 80%;

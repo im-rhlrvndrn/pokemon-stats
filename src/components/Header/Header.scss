@@ -33,23 +33,30 @@
         form {
             display: flex;
             width: 100%;
+            @include phone {
+                align-items: center;
+            }
 
             input {
                 margin-right: 0.8rem;
                 border: 0.1px solid lightgray;
-                flex: 1;
+                flex: 0.8;
                 @include phone {
+                    margin-right: 0.5rem;
                     padding: 0 1rem;
-                    // margin: 0;
                 }
             }
 
             button {
                 background-color: $pokemon_red;
                 color: $white;
+                flex: 0.2;
                 @include phone {
-                    padding: 0 1.2rem;
-                    //     display: none;
+                    padding: 0 0.5rem;
+                    width: auto;
+                    height: 40px;
+                    display: grid;
+                    place-items: center;
                 }
             }
         }
